@@ -1,0 +1,30 @@
+Query set
+
+# ejecutar consultas orm a travez de la consola
+
+python manage.py shell
+
+# lo siguiente es importar el modelo para poder trabajar con el
+
+from blog.models import Post
+
+# nombre de la tabla que utilizaremos para el ejemplo
+
+model = Post
+
+# Se utiliza para traer todos los datos del objeto
+
+Post.objects.all()
+
+# Filter equivalente a where
+
+Post.objects.filter(author=me)
+
+# contengan un string determinado donde title y constains busca dentro de ese campo el texto equivalente	
+
+Post.objects.filter(title__contains='title')
+
+
+# Equivalente a order by 
+
+Post.objects.order_by('created_date')

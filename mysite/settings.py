@@ -28,6 +28,23 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sepulveda.carlos.larenas@gmail.com'
+EMAIL_HOST_PASSWORD = 'Lin@res.1995'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+
+De esta manera, cambiamos el usuario y la contraseña y tenemos lista la configuración. Para hacer más fácil la configuración, podemos tener un remitente por defecto agregando lo siguiente:
+
+RemitenteL='Nombre de remitente '
+
+Y de esta manera queda configurado nuestro sistema para poder enviar correos desde Django con Gmail. Para probar esto, basta con abrir la terminal y ejecutar lo siguiente:
+
+python
+from django.core.mail import EmailMessage #Importamos la librería para enviar los correos
+email = EmailMessage('Asunto', 'Mensaje', to=['Correo@correo.com']) #Agregamos una variable
+'email' y le pasamos los valores del Asunto, Mensaje y el correo 
+
 # Application definition
 
 INSTALLED_APPS = [
